@@ -1,15 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <div 
+    v-for="post in store.state.posts" 
+    :key="post.id"
+  >
+    {{ post.title }}
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { store } from './composables/Store'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    return { store }
   }
 }
 </script>
+
+<style>
+
+</style>
