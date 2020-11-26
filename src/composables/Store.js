@@ -14,6 +14,28 @@ class Store {
             'composition api'
           ],
           likes: 32
+        },
+        {
+          id: 2,
+          title: 'Learning Typescript',
+          content: 'Learning Typescript with Cod3r cursos',
+          hashtags: [
+            'ts',
+            'js',
+            'typescript'
+          ],
+          likes: 32
+        },
+        {
+          id: 3,
+          title: 'Learning Flutter',
+          content: 'Learning Dart and Flutter with Academind',
+          hashtags: [
+            'google',
+            'flutter',
+            'mobile'
+          ],
+          likes: 32
         }
       ]
     })

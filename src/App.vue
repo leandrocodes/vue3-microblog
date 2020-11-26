@@ -8,9 +8,10 @@
         {{ post.content }}
       </template>
       <template v-slot:actions>
-        <controls :post="post" />
+        <controls :post="post" @setHashtag="setHashtag" />
       </template>
     </card>
+    {{ currentHashTag }}
   </div>
 </template>
 
@@ -18,13 +19,19 @@
 import { store } from './composables/Store'
 import card from './components/card.vue'
 import controls from './components/controls.vue'
+
+import { ref } from 'vue'
 export default {
   components: {
     card,
     controls
   },
   setup() {
-    return { store }
+    const currentHashTag = ref()
+    const setHashtag = tag => {
+      currentHashTag.value = tag
+    }
+    return { store, setHashtag, currentHashTag }
   }
 }
 </script>
